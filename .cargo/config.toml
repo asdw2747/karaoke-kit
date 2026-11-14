@@ -1,0 +1,13 @@
+# KaraokeKit cross-compilation settings.
+#
+# Statically link the MSVC C runtime so karaoke-kit.exe runs on clean Windows
+# machines without the VC++ Redistributable. Only the Windows target gets this
+# flag; Linux/macOS builds are untouched.
+[target.x86_64-pc-windows-msvc]
+rustflags = [
+    "-C",
+    "target-feature=+crt-static",
+    # cargo-xwin ships PDB-less static CRT libraries; silence LNK4099 chatter.
+    "-C",
+    "link-arg=/ignore:4099",
+]

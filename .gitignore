@@ -1,0 +1,11 @@
+/target
+/dist
+*.AppImage
+*.exe
+*.ass
+*.mp4
+*.mkv
+*.mov
+*.webm
+*.log
+.DS_Store

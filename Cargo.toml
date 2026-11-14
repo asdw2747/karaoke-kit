@@ -1,0 +1,53 @@
+[package]
+name = "karaoke-kit"
+version = "1.0.0"
+edition = "2021"
+rust-version = "1.95"
+license = "MIT"
+description = "Tap-to-sync karaoke lyric video creator with progressive sweep styling and MP4/MKV export."
+readme = "README.md"
+keywords = ["karaoke", "lyrics", "video", "ffmpeg", "egui"]
+categories = ["multimedia::video", "gui"]
+
+[dependencies]
+# Pure-Rust UI stack (glow/OpenGL backend; no bundled C sources).
+eframe = { version = "0.37", default-features = false, features = [
+    "glow",
+    "default_fonts",
+    "x11",
+    "wayland",
+    "clipboard",
+] }
+egui = "0.37"
+# Audio: decode with symphonia, play with cpal (ALSA/WASAPI/CoreAudio backends).
+cpal = "0.17"
+symphonia = { version = "0.5", default-features = false, features = [
+    "flac",
+    "mp3",
+    "ogg",
+    "vorbis",
+    "wav",
+    "pcm",
+] }
+# Native file dialogs. The Linux backend uses the XDG desktop portal (pure Rust),
+# never GTK; Windows uses the COM file dialogs.
+rfd = { version = "0.18", default-features = false, features = [
+    "xdg-portal",
+    "wayland",
+] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# PNG encode (icon + gradient background) and cover/bg image decoding.
+image = { version = "0.25", default-features = false, features = ["png", "jpeg"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
+codegen-units = 1
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 2
