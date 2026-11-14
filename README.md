@@ -8,7 +8,6 @@ paste the lyrics, and tap **Space** on every syllable. KaraokeKit turns those ta
 into a smooth `\kf` sweep, previews it live at 1920×1080, and burns it into an
 H.264 video with FFmpeg.
 
-![KaraokeKit editor](docs/screenshot.png)
 
 A rendered frame with the progressive sweep:
 
