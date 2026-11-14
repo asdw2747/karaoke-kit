@@ -9,23 +9,6 @@ into a smooth `\kf` sweep, previews it live at 1920×1080, and burns it into an
 H.264 video with FFmpeg.
 
 
-A rendered frame with the progressive sweep:
-
-![Rendered karaoke frame](docs/sample-frame.png)
-
-The same song exported as a true 4:3 canvas (`1440×1080`):
-
-![4:3 karaoke frame](docs/sample-frame-4x3.png)
-
-A lead-in countdown after a long instrumental gap — the dots step 4 → 3 → 2 → 1
-above the on-deck line, then the sweep begins:
-
-![Lead-in countdown](docs/sample-countdown.png)
-
-A 3.5 s title-card pre-roll: title and artist on the card, the opening line on
-deck with a 4-dot entrance cue, then the audio and sweep begin together:
-
-![Title-card pre-roll](docs/sample-title-card.png)
 
 ---
 
